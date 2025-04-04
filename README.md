@@ -199,13 +199,23 @@ Modular JS for dynamic UI behavior:
 
 ---
 
-## 🧪 Running Tests
+## ✅ Test Coverage
+
+This project includes full test coverage for:
+
+- **Models** — `User`, `Survey`, and `Response` have dedicated unit tests.
+- **Controllers** — `SurveysController` and `ResponsesController` are fully tested.
+- **ViewComponents** — All major components are tested in isolation under `test/components/`.
+- **System Tests** — Includes Capybara-powered tests (e.g., `surveys_test.rb`) for end-to-end flows.
+- **Fixtures & Helpers** — Reusable test data and helpers streamline testing setup.
+
+🧪 Run all tests via:
 
 ```bash
 docker-compose exec app rails test
 ```
 
-Includes unit tests for models, controllers, and ViewComponents.
+The test suite ensures confidence across the stack — from database logic to UI rendering and user interactions.
 
 ---
 
