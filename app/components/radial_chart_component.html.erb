@@ -1,0 +1,34 @@
+<!-- app/components/radial_chart_component.html.erb -->
+<div class="d-flex flex-wrap justify-content-center gap-4">
+  <div class="flex-grow-1" style="max-width: 160px;">
+    <div class="radial-progress text-center" style="animation-delay: <%= @delay %>;">
+      <div class="w-100 mx-auto" >
+        <svg viewBox="0 0 36 36"
+     class="circular-chart text-<%= @color %>"
+     preserveAspectRatio="xMidYMid meet"
+     width="100%"
+     height="100%">
+          <defs>
+            <filter id="stroke-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="currentColor" flood-opacity="0.6" />
+            </filter>
+          </defs>
+          <path class="circle-bg"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path class="circle"
+        stroke-dasharray="<%= @percentage %>, 100"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831" />
+
+  <text x="18" y="20.35" class="percentage" data-percentage="<%= @percentage.to_i %>">
+            <%= @percentage.to_i %>%
+          </text>
+        </svg>
+        <div class="label mt-2 fw-semibold"><%= @label %></div>
+      </div>
+    </div>
+  </div>
+</div>

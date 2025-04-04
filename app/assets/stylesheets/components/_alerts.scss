@@ -1,0 +1,71 @@
+// ============================
+// Enhanced Flash Alerts
+// ============================
+
+$alert-colors: (
+  success: (#d1e7dd, #0f5132, $success),
+  danger: (#f8d7da, #842029, $danger),
+  info: (#cff4fc, #055160, $info),
+  warning: (#fff3cd, #664d03, $warning)
+);
+
+.alert {
+  border-radius: $radius-md !important;
+  padding: $radius-lg 1.5rem !important;
+  font-weight: 500 !important;
+  display: flex;
+  align-items: center;
+  gap: $radius-md;
+  box-shadow: 0 $radius-md 1.5rem rgba(0, 0, 0, 0.05) !important;
+  animation: fadeInSlide 0.35s ease-out both;
+  position: relative;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  span {
+    flex-grow: 1;
+  }
+
+  .btn-close {
+    margin-left: auto;
+  }
+}
+
+// Theme variants
+@each $type, $values in $alert-colors {
+  $bg: nth($values, 1);
+  $fg: nth($values, 2);
+  $border: nth($values, 3);
+
+  .alert-#{$type} {
+    background-color: $bg !important;
+    color: #ffffff !important;
+    border-left: 5px solid $border !important;
+  }
+}
+
+// Toast-style alerts (fixed, top-right)
+.toast-alert {
+  position: fixed;
+  top: $radius-lg;
+  right: $radius-lg;
+  z-index: 1055;
+  max-width: 360px;
+  width: calc(100% - 2rem);
+}
+
+// Fade + slide animation
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

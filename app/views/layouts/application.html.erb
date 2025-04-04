@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SurveyApplication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", media: "all", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags "application" %>
+  </head>
+  <body class="position-relative " id="body">
+    <%= render NavbarComponent.new %>
+    <main>
+      <%= render FlashComponent.new(flash: flash) %>
+      <%= yield %>
+    </main>
+    <%= render GradientWaveComponent.new(
+  top_gradient: ["#0d6efd", "#2563eb"],
+  bottom_gradient: ["#2563eb", "#0d6efd"],
+  dark_mode: false,
+  blur: false,
+  opacity: 0.85,
+  animated: false,
+  top_height: 200,
+  bottom_height: 160
+) %>
+    <script>
+      function applyThemeAndFadeIn() {
+        const toggleInput = document.getElementById("theme-toggle");
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem("theme");
+
+        // Force dark mode as default
+        const shouldBeDark = savedTheme !== "light"; // only light if explicitly set
+
+        if (shouldBeDark) {
+          root.classList.add("dark-mode");
+          if (toggleInput) toggleInput.checked = true;
+        }
+
+        toggleInput?.addEventListener("change", () => {
+          const isDark = toggleInput.checked;
+          root.classList.toggle("dark-mode", isDark);
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+
+        document.body.classList.add("page-loaded");
+      }
+
+      document.addEventListener("turbo:load", applyThemeAndFadeIn);
+      document.addEventListener("DOMContentLoaded", applyThemeAndFadeIn);
+    </script>
+    <%= render "shared/welcome_overlay" %>
+  </body>
+</html>

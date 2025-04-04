@@ -1,0 +1,19 @@
+<!-- app/components/alert_icon_component.html.erb -->
+<% case @type %>
+<% when "success" %>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+    <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.97 10.03a.75.75 0 0 0 1.08.022l3.992-4.99a.75.75 0 1 0-1.14-.976L7.477 8.417 5.383 6.323a.75.75 0 1 0-1.06 1.06l2.647 2.647z"/>
+  </svg>
+<% when "danger" %>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+    <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+  </svg>
+<% when "info" %>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm1-11.5a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm-.25 2.75a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 1.5 0v-5z"/>
+  </svg>
+<% when "warning" %>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+    <path d="M7.938 2.016a.13.13 0 0 1 .125 0l6.857 11.856c.03.053.05.112.05.17a.26.26 0 0 1-.25.258H1.28a.26.26 0 0 1-.25-.258c0-.058.02-.117.05-.17L7.938 2.016zM8 5c-.535 0-.954.462-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 5zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+  </svg>
+<% end %>

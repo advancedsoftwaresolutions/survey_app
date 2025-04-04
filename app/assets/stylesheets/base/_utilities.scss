@@ -1,0 +1,65 @@
+// ===============================
+// 🧰 _utilities.scss — Reusable Class Utilities
+// ===============================
+
+// Blur Utilities
+.blur-sm {
+  backdrop-filter: $blur-sm;
+  -webkit-backdrop-filter: $blur-sm;
+}
+
+.blur-md {
+  backdrop-filter: $blur-md;
+  -webkit-backdrop-filter: $blur-md;
+}
+
+.blur-lg {
+  backdrop-filter: $blur-lg;
+  -webkit-backdrop-filter: $blur-lg;
+}
+
+// Shadow Utilities
+.shadow-card {
+  box-shadow: $shadow-card !important;
+}
+
+.shadow-glass {
+  box-shadow: $shadow-glass !important;
+}
+
+.shadow-hover {
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: $shadow-hover !important;
+  }
+}
+
+// Background Glass Utilities
+.bg-glass-light {
+  background-color: $glass-bg-light !important;
+}
+
+.bg-glass-medium {
+  background-color: $glass-bg-medium !important;
+}
+
+.bg-glass-dark {
+  background-color: $glass-bg-dark !important;
+}
+
+.bg-glass-deep {
+  background-color: $glass-bg-deep !important;
+}
+
+// Radius Utilities
+.radius-sm {
+  border-radius: $radius-sm !important;
+}
+
+.radius-md {
+  border-radius: $radius-md !important;
+}
+
+.radius-lg {
+  border-radius: $radius-lg !important;
+}

@@ -1,0 +1,23 @@
+.btn,
+.card-header,
+.card-footer,
+table,
+th,
+td,
+.form-control,
+.form-label {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.btn {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.progress-bar {
+  transition: width 0.6s ease-in-out;
+}

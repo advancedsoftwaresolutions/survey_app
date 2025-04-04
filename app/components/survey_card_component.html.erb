@@ -1,0 +1,38 @@
+<%= link_to survey_path(@survey), class: "survey-card-link text-decoration-none text-reset" do %>
+  <div class="card-wrapper h-100 animate-soft-lift">
+    <div class="glassmorphic survey-card p-3 p-sm-4 gap-3 shadow-sm" data-blur-in-delay-value="<%= delay %>">
+      <div class="card-header bg-transparent border-0 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
+        <h5 class="mb-24mb-md-0">Survey Question: <%= @survey.question %></h5>
+        <%= link_to "View", survey_path(@survey), class: "btn btn-sm btn-outline-primary mt-2 mt-md-0" %>
+      </div>
+      <div class="card-body text-start px-1 px-md-3">
+        <h5 class="d-flex justify-content-between mb-2">Response Breakdown
+          <span>
+            <small class="live-badge text-success" data-bs-toggle="tooltip" title="Last updated just now">
+              <span class="dot bg-success"></span> Live
+            </small>
+          </span>
+        </h5>
+        <div class="row text-center justify-content-center">
+          <div class="col-6 col-md-2">
+            <%= render RadialChartComponent.new(
+              percentage: @survey.yes_percentage,
+              label: "Yes",
+              color: "success",
+              delay: "0.1s"
+            ) %>
+          </div>
+          <div class="col-6 col-md-2">
+            <%= render RadialChartComponent.new(
+              percentage: @survey.no_percentage,
+              label: "#{@survey.last_response_time.present? ? 'No' : 'No Response'}",
+              color: "danger",
+              delay: "0.1s"
+            ) %>
+          </div>
+        </div>
+        <%= render SurveyResponseSummaryComponent.new(survey: @survey) %>
+      </div>
+    </div>
+  </div>
+<% end %>

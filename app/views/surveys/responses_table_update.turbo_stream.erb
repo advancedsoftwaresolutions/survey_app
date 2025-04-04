@@ -1,0 +1,7 @@
+<turbo-stream target="survey-responses" action="update">
+  <template>
+    <div id="survey-responses-content">
+      <%= render ResponsesTableComponent.new(survey: @survey) %>
+    </div>
+  </template>
+</turbo-stream>

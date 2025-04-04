@@ -1,0 +1,24 @@
+.navbar {
+  padding: 1rem 1.5rem;
+
+  .navbar-brand img {
+    max-width: 160px;
+    height: auto;
+  }
+
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+      padding-top: 1rem;
+    }
+    .theme-switch-wrapper {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.radial-progress {
+  animation: floatUpFadeIn 0.8s ease-out both;
+}
+
+.radial-progress svg {
+  aspect-ratio: 1 / 1;
+}
+
+.circular-chart .circle {
+  transition: filter 0.3s ease;
+}
+
+.circular-chart:hover .circle {
+  filter: url(#stroke-glow);
+}

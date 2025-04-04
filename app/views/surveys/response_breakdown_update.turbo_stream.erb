@@ -1,0 +1,9 @@
+<turbo-stream target="survey-breakdown" action="update">
+  <template>
+    <div id="survey-breakdown-content">
+      <%= render ResponseBreakdownComponent.new(
+        survey: survey
+      ) %>
+    </div>
+  </template>
+</turbo-stream>

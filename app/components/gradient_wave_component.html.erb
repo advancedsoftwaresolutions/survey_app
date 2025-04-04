@@ -1,0 +1,35 @@
+<!-- Top Wave -->
+<div class="position-fixed top-0 start-0 w-100 static-gradient-wave <%= 'dark-mode' if @dark_mode %>">
+  <svg
+    viewBox="0 0 1440 200"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-100 d-block <%= 'animated-wave' if @animated %> <%= 'h-24 md:h-32' if @responsive_height %>"
+    style="<%= 'height: ' + @top_height.to_s + 'px;' unless @responsive_height %> aspect-ratio: 1440 / 200; opacity: <%= @opacity %>; <%= 'filter: blur(1px);' if @blur %>">
+    <defs>
+      <linearGradient id="staticGradientTop" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="<%= @top_gradient[0] %>" />
+        <stop offset="80%" stop-color="<%= @top_gradient[1] %>" />
+      </linearGradient>
+    </defs>
+    <path d="<%= @top_wave_path %>" fill="url(#staticGradientTop)" />
+  </svg>
+</div>
+
+<!-- Bottom Wave -->
+<div class="position-fixed bottom-0 start-0 w-100 static-gradient-wave <%= 'dark-mode' if @dark_mode %>">
+          <svg
+    viewBox="0 0 1440 200"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-100 d-block <%= 'animated-wave' if @animated %> <%= 'h-24 md:h-32' if @responsive_height %>"
+    style="<%= 'height: ' + @bottom_height.to_s + 'px;' unless @responsive_height %> aspect-ratio: 1440 / 200; opacity: <%= @opacity %>; <%= 'filter: blur(1px);' if @blur %>">
+            <defs>
+              <linearGradient id="staticGradientBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="<%= @bottom_gradient[0] %>" />
+                  <stop offset="80%" stop-color="<%= @bottom_gradient[1] %>" />
+                  </linearGradient>
+                </defs>
+                <path d="<%= @bottom_wave_path %>" fill="url(#staticGradientBottom)" />
+                </svg>
+              </div>

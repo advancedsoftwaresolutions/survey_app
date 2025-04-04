@@ -1,0 +1,61 @@
+<div id="survey-responses-content">
+  <div class="position-relative">
+    <div class="spinner-overlay" id="auto-refresh-spinner">
+      <div class="spinner-border text-primary spinner-border-sm" role="status" aria-hidden="true"></div>
+    </div>
+    <div class="card-wrapper">
+      <div class="glassmorphic shadow-sm p-3 p-md-4 gap-3">
+        <div class="card-header bg-transparent border-0 text-center text-md-start">
+          <h5>Individual Responses</h5>
+        </div>
+        <div class="card-body p-0">
+          <div data-controller="table">
+            <div class="table-wrapper">
+              <table class="custom-table mb-0 text-nowrap">
+                <thead class="small text-uppercase text-center text-md-start">
+                  <tr>
+                    <th>Answer</th>
+                    <th>Submitted</th>
+                    <th>IP Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @survey.responses.order(created_at: :desc).each do |response| %>
+                    <tr data-table-target="row">
+                      <td>
+                        <% if response.answer == "yes" %>
+                          <span class="badge bg-success">Yes</span>
+                        <% else %>
+                          <span class="badge bg-danger">No</span>
+                        <% end %>
+                      </td>
+                      <td><%= time_ago_in_words(response.created_at) %> ago</td>
+                      <td><%= response.ip_address %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+            <nav class="mt-3">
+              <ul class="pagination custom-pagination justify-content-center" data-table-target="pagination">
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-2" data-controller="share">
+          <button class="btn btn-outline-primary btn-sm" data-action="click->share#exportCSV">
+            <i class="bi bi-download me-1"></i> Export CSV
+          </button>
+          <div class="text-center text-sm-end">
+            <small>
+              <span id="live-badge" class="live-badge dot text-success" data-bs-toggle="tooltip" title="Last updated just now">
+                <span class="dot bg-success"></span> Live
+              </span>
+              <i class="bi bi-arrow-clockwise me-1"></i> Last updated <%= time_ago_in_words(Time.current) %> ago
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

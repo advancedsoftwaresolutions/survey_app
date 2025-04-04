@@ -1,0 +1,19 @@
+<%= render SurveyHeaderComponent.new(count: @surveys.count) %>
+<% if @surveys.empty? %>
+  <%= render EmptyStateComponent.new(
+        icon: "bi bi-clipboard-x",
+        title: "No surveys yet",
+        description: "Create your first yes/no survey to start collecting feedback.",
+        button_text: "New Survey",
+        button_path: new_survey_path
+      ) %>
+<% else %>
+  <% @surveys.each_with_index do |survey, i| %>
+    <div id="survey-<%= survey.id %>"
+       data-controller="survey-card"
+       data-survey-card-id-value="<%= survey.id %>"
+       data-survey-card-refresh-interval-value="10">
+      <%= render SurveyCardComponent.new(survey: survey, delay: i * 50) %>
+    </div>
+  <% end %>
+<% end %>

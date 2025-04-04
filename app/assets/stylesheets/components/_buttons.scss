@@ -1,0 +1,67 @@
+// Define theme colors
+$primary: $primary;
+$secondary: #ffffff;
+
+// Default Outlined Primary Button Styling (for light backgrounds)
+.btn-outline-primary {
+  color: $primary !important;
+  background-color: transparent !important;
+  border: 1px solid $primary !important;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease !important;
+
+  &:hover,
+  &:focus {
+    color: $secondary !important;
+    background-color: $primary !important;
+    border-color: $primary !important;
+  }
+
+  &:active,
+  &.active {
+    color: $secondary !important;
+    background-color: darken($primary, 7%) !important;
+    border-color: darken($primary, 7%) !important;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: lighten($primary, 20%) !important;
+    border-color: lighten($primary, 20%) !important;
+    background-color: transparent !important;
+    opacity: 0.65 !important;
+  }
+}
+
+// Outlined Button Variant for a Primary Background
+.nav-item {
+  .btn-outline-primary {
+    color: $secondary !important;
+    border: 1px solid $secondary !important;
+    background-color: transparent !important;
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease !important;
+
+    &:hover,
+    &:focus {
+      color: $primary !important;
+      background-color: $secondary !important;
+      border-color: $secondary !important;
+    }
+
+    &:active,
+    &.active {
+      color: $primary !important;
+      background-color: darken($secondary, 7%) !important;
+      border-color: darken($secondary, 7%) !important;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: lighten($secondary, 20%) !important;
+      border-color: lighten($secondary, 20%) !important;
+      background-color: transparent !important;
+      opacity: 0.65 !important;
+    }
+  }
+}

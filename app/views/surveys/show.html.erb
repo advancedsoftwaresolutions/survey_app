@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <%= render PageHeaderComponent.new(title: "Survey Details", link_text: "Back to Surveys", link_path: surveys_path) %>
+  <div class="container">
+    <div class="row mb-4 align-items-stretch">
+      <div class="col-md-6">
+        <%= render SurveyVoteComponent.new(survey: @survey) %>
+      </div>
+      <div class="col-md-6">
+        <div id="survey-breakdown" data-controller="animation" data-animation-target-id-value="survey-breakdown-content">
+          <div id="survey-breakdown-content">
+            <%= render ResponseBreakdownComponent.new(
+      survey: @survey
+    ) %>
+          </div>
+        </div>
+      </div>
+      <% if @survey.responses.any? %>
+        <div data-controller="autorefresh" data-autorefresh-interval-value="10">
+          <div id="survey-responses">
+            <%= render ResponsesTableComponent.new(survey: @survey) %>
+          </div>
+        </div>
+      <% else %>
+        <%= render EmptyStateComponent.new(
+          icon: "bi bi-clipboard-x",
+          title: "No responses yet",
+          description: "Be the first to answer this survey!",
+          button_text: nil,
+          button_path: nil
+      ) %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+// ===============================
+// 🌗 _themes.scss — Light & Dark Mode Tokens
+// ===============================
+
+// LIGHT THEME
+$theme-light: (
+  bg: $light-bg,
+  text: $text-dark,
+  muted: $text-muted,
+  card-bg: $glass-bg-light,
+  border: $glass-bg-medium,
+  shadow: $shadow-soft,
+  primary: $primary,
+  success: $success,
+  danger: $danger,
+);
+
+// DARK THEME
+$theme-dark: (
+  bg: $dark-bg,
+  text: $text-light,
+  muted: lighten($text-light, 30%),
+  card-bg: $glass-bg-deep,
+  border: $glass-bg-dark,
+  shadow: $shadow-heavy,
+  primary: $primary,
+  success: $success,
+  danger: $danger,
+);
+
+// Mixin to use theme values dynamically
+@mixin themed($key) {
+  color: map-get($theme-light, $key);
+  html.dark-mode & {
+    color: map-get($theme-dark, $key);
+  }
+}
+
+@mixin themed-bg($key) {
+  background-color: map-get($theme-light, $key);
+  html.dark-mode & {
+    background-color: map-get($theme-dark, $key);
+  }
+}
+
+@mixin themed-border($key) {
+  border-color: map-get($theme-light, $key);
+  html.dark-mode & {
+    border-color: map-get($theme-dark, $key);
+  }
+}
+
+// Example Usage:
+// .card {
+//   @include themed-bg(card-bg);
+//   @include themed(text);
+//   @include themed-border(border);
+// }

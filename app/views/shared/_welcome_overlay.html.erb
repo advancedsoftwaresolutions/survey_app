@@ -1,0 +1,31 @@
+<div id="welcome-overlay"
+     class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white"
+     style="z-index: 1055; background-color: #030b1a; overflow: hidden;">
+  <div class=" position-absolute top-0 start-0 w-100 h-100 overflow-hidden"></div>
+  <!-- 🎨 Animated Multi-layered SVG Waves -->
+  <div class="wave-wrapper position-absolute bottom-0 start-0 w-100 overflow-hidden" style="height: 200px; pointer-events: none;">
+    <%= render GradientWaveComponent.new(
+  top_gradient: ["#0d6efd", "#2563eb"],
+  bottom_gradient: ["#2563eb", "#0d6efd"],
+  dark_mode: false,
+  blur: false,
+  opacity: 0.85,
+  animated: false,
+  top_height: 200,
+  bottom_height: 160
+) %>
+  </div>
+  <!-- 🚀 Overlay Content -->
+  <div class="text-center fade-in-up px-4">
+    <%= image_tag "/logo.png", alt: "SurveyApp Logo", width: 350, class: "img-fluid mb-3" %>
+    <h2 class="mb-3 fw-ultralight" style="font-weight: 200;">Welcome to the best Survey Application of 2025</h2>
+    <h5 class="lead">Loading your experience...</h5>
+    <svg class="mt-4" width="60" height="60" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="35" stroke="white" stroke-width="10" fill="none" stroke-linecap="round"
+              stroke-dasharray="164.93361431346415 56.97787143782138">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite"
+                          dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"/>
+      </circle>
+    </svg>
+  </div>
+</div>

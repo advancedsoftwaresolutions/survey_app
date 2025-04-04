@@ -1,0 +1,23 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RUBY_VERSION: 3.2.8
+    container_name: app
+    volumes:
+      - .:/rails
+      - bundle_cache:/rails/vendor/bundle
+      - rails_tmp:/rails/tmp/
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: development
+    stdin_open: true
+    tty: true
+    
+
+volumes:
+  bundle_cache:
+  rails_tmp:

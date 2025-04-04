@@ -1,0 +1,15 @@
+<!-- app/components/empty_state_component.html.erb -->
+<div class="card-wrapper animate-soft-lift">
+  <div class="glassmorphic p-4 gap-3" >
+    <div class="card-body text-center">
+      <div class="text-center py-5 animate-fade-in">
+        <i class="<%= @icon %> fs-1 mb-3 d-block"></i>
+        <h5 class="mb-2"><%= @title %></h5>
+        <p><%= @description %></p>
+        <% unless @button_path.nil? %>
+          <%= link_to @button_text, @button_path, class: "btn btn-outline-primary mt-3" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

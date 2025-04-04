@@ -1,0 +1,36 @@
+<div id="survey-breakdown-content">
+  <div class="position-relative">
+    <div class="spinner-overlay" id="auto-refresh-spinner">
+      <div class="spinner-border text-primary spinner-border-sm" role="status" aria-hidden="true"></div>
+    </div>
+    <div class="card-wrapper">
+      <div class="glassmorphic shadow-sm p-3 p-md-4 gap-3">
+        <div class="card-header bg-transparent border-0 text-center text-md-start">
+          <h5>Response Breakdown</h5>
+        </div>
+        <div class="card-body px-2">
+          <div class="row text-center justify-content-center gap-4 mb-">
+            <div class="col-6 col-md-3 mt-5">
+              <%= render RadialChartComponent.new(
+              percentage: yes_percentage,
+              label: "Yes",
+              color: "success",
+              delay: "0.1s"
+            ) %>
+            </div>
+            <div class="col-6 col-md-3 mt-5">
+              <%= render RadialChartComponent.new(
+              percentage: no_percentage,
+              label: "#{last_response_time.present? ? 'No' : 'No Response'}",
+              color: "danger",
+              delay: "0.1s"
+            ) %>
+            </div>
+          </div>
+          <%= render SurveyResponseSummaryComponent.new(survey: @survey) %>
+          <%= render LiveStatusComponent.new(survey: @survey) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

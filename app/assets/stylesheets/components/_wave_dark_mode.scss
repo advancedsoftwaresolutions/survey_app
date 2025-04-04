@@ -1,0 +1,7 @@
+/* Optional: Animate gradient color in dark mode */
+html.dark-mode .wave-gradient stop:first-child {
+  stop-color: #1e3a8a; /* dark blue */
+}
+html.dark-mode .wave-gradient stop:last-child {
+  stop-color: #2563eb; /* lighter accent */
+}

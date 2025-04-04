@@ -1,0 +1,9 @@
+<!-- app/components/survey_summary_component.html.erb -->
+<p class="my-3 text-center small">
+  <%= pluralize(@survey.total_responses, "response") %> total ·
+  <% if @survey.last_response_time.present? %>
+    Last responded <%= time_ago_in_words(@survey.last_response_time) %> ago
+  <% else %>
+    No responses yet
+  <% end %>
+</p>

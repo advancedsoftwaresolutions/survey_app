@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-between align-items-center mb-4 ms-2 me-2">
+  <h5 class="ml-2 -mr-2">Total Surveys: <span class="badge bg-primary"><%= @count %></span></h5>
+  <%= image_tag "/logo2.png", alt: "SurveyApp Logo", class: "logo logo-light" %>
+  <%= image_tag "/logo.png", alt: "SurveyApp Logo", class: "logo logo-dark" %>
+  <%= link_to "New Survey", new_survey_path, class: "btn btn-outline-primary btn-sm" %>
+</div>

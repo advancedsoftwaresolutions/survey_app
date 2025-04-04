@@ -1,0 +1,58 @@
+.card-header,
+.card-footer {
+  background-color: transparent;
+  border: none;
+}
+
+.card-wrapper {
+  border-radius: $radius-lg;
+  transition: transform 0.4s ease;
+}
+
+.card-wrapper:hover {
+  box-shadow: 0 $radius-lg 2rem rgba(0, 0, 0, 0.15);
+}
+
+.glassmorphic {
+  backdrop-filter: $blur-lg;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 $radius-lg 2rem $shadow-soft;
+  border-radius: $radius-lg;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity;
+  color: #4b5563;
+}
+
+.glassmorphic h4,
+.glassmorphic h5 {
+  margin-bottom: $radius-lg;
+}
+
+.glassmorphic p {
+  line-height: 1.6;
+  margin-bottom: $radius-lg;
+}
+
+.survey-card {
+  will-change: transform, opacity;
+  animation: floatInBlur 0.6s ease-out both;
+}
+
+@keyframes floatInBlur {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.glassmorphic {
+  animation: soft-lift 0.5s ease-out both;
+}

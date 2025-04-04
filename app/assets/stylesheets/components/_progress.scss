@@ -1,0 +1,29 @@
+.circular-chart {
+  display: block;
+  max-width: 140px;
+  margin: auto;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: currentColor;
+  stroke-opacity: 10%;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.percentage {
+  fill: currentColor;
+  font-size: 0.45rem;
+  font-weight: lighter;
+  text-anchor: middle;
+}

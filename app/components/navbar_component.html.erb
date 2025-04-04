@@ -1,0 +1,27 @@
+<!-- app/components/navbar_component.html.erb -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent sticky-top mb-4">
+  <div class="container-fluid px-3 px-md-5">
+    <span class="navbar-brand" style="margin-top: -0.5rem;">
+      <%= image_tag "/logo.png", alt: "SurveyApp Logo", width: 160, class: "img-fluid" %>
+    </span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div data-controller="navbar" class="collapse navbar-collapse transition-all" id="mainNavbar">
+      <ul class="navbar-nav ms-auto gap-3 align-items-center">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <div class="theme-switch-wrapper" title="Toggle dark mode">
+            <label class="theme-switch d-flex align-items-center">
+              <input type="checkbox" id="theme-toggle" />
+              <span class="slider"></span>
+            </label>
+            <span class="ms-2 text-white small">Dark Mode</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

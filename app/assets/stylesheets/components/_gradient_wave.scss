@@ -1,0 +1,40 @@
+.wave {
+  position: fixed;
+  width: 100%;
+  pointer-events: none;
+  line-height: 0;
+  z-index: -1;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &.top {
+    top: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
+}
+
+.static-gradient-wave {
+  z-index: -1;
+  pointer-events: none;
+  line-height: 0;
+}
+
+.animated-wave {
+  animation: waveShift 6s infinite linear alternate;
+}
+
+@keyframes waveShift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}

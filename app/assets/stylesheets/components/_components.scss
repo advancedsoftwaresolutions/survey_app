@@ -1,0 +1,12 @@
+// Shared card component layout styles
+.card-header {
+  padding: 1rem;
+  border-bottom: 1px solid $glass-bg-medium;
+  background-color: transparent;
+}
+
+.card-footer {
+  padding: 1rem;
+  border-top: 1px solid $glass-bg-medium;
+  background-color: transparent;
+}

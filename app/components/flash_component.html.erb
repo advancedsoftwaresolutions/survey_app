@@ -1,0 +1,15 @@
+<!-- app/components/flash_component.html.erb -->
+<div id="flash-container" class="toast-container position-fixed top-0 mt-5 pb-5 end-0 p-3" style="z-index: 1055;">
+  <% @flash.each do |type, message| %>
+    <% klass = bootstrap_class(type) %>
+    <div class="toast toast-<%= klass %> align-items-center border-0 show mb-3 fade-in " role="alert" aria-live="assertive" aria-atomic="true" data-controller="flash" data-action="animationend->flash#remove">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2">
+          <%= render AlertIconComponent.new(type: klass) %>
+          <span><%= message %></span>
+        </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+html {
+  background-color: $light-bg;
+  font-weight: 300;
+}
+
+body {
+  background-color: transparent !important;
+  color: $text-dark;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#welcome-overlay {
+  background-color: $light-bg;
+}
